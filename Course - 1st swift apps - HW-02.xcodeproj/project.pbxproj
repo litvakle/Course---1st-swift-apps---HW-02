@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-02.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-02-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A03663223E4891700945654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A03663423E4891700945654 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3A03663623E4891700945654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		3A03663023E4891700945654 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02.app */,
+				3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02-01.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			);
 			name = "Course - 1st swift apps - HW-02";
 			productName = "Course - 1st swift apps - HW-02";
-			productReference = 3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02.app */;
+			productReference = 3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02-01.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -295,8 +295,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Lev-Litvak.Course---1st-swift-apps---HW-02";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lev-Litvak.Course---1st-swift-apps---HW-02-01";
+				PRODUCT_NAME = "Course - 1st swift apps - HW-02-01";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,8 +313,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Lev-Litvak.Course---1st-swift-apps---HW-02";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lev-Litvak.Course---1st-swift-apps---HW-02-01";
+				PRODUCT_NAME = "Course - 1st swift apps - HW-02-01";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
