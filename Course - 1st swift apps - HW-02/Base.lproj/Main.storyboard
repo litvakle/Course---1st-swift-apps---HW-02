@@ -77,19 +77,19 @@
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-vS-vP1">
                                                 <rect key="frame" x="-2" y="0.0" width="217.5" height="35"/>
                                                 <connections>
-                                                    <action selector="SliderMoved" destination="BYZ-38-t0r" eventType="valueChanged" id="0TU-pk-4aH"/>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="0bK-1q-rJu"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-us-Gk2">
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-us-Gk2">
                                                 <rect key="frame" x="-2" y="54" width="217.5" height="35"/>
                                                 <connections>
-                                                    <action selector="SliderMoved" destination="BYZ-38-t0r" eventType="valueChanged" id="3lQ-vJ-Ord"/>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="3yp-5u-AOX"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-wX-bG0">
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-wX-bG0">
                                                 <rect key="frame" x="-2" y="108" width="217.5" height="35"/>
                                                 <connections>
-                                                    <action selector="SliderMoved" destination="BYZ-38-t0r" eventType="valueChanged" id="O96-27-Ley"/>
+                                                    <action selector="sliderMoved:" destination="BYZ-38-t0r" eventType="valueChanged" id="K4q-X1-fDp"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -102,12 +102,12 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ey-U7-HEP">
+                                            <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ey-U7-HEP">
                                                 <rect key="frame" x="0.0" y="54" width="60" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jr8-jB-SWv">
+                                            <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1.00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jr8-jB-SWv">
                                                 <rect key="frame" x="0.0" y="108" width="60" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES" textContentType="tel"/>
@@ -133,16 +133,16 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="blueLabel" destination="HnV-he-jjP" id="43O-Nw-c2O"/>
-                        <outlet property="blueSlider" destination="bWL-wX-bG0" id="IS1-d9-1PJ"/>
-                        <outlet property="blueTextField" destination="Jr8-jB-SWv" id="KEb-B7-RwD"/>
                         <outlet property="colorView" destination="Qnc-ss-qps" id="iEY-aW-Nbj"/>
-                        <outlet property="greenLabel" destination="lDz-SR-kcJ" id="ksI-Ml-Cms"/>
-                        <outlet property="greenSlider" destination="yQa-us-Gk2" id="Vef-KJ-sn5"/>
-                        <outlet property="greenTextField" destination="3Ey-U7-HEP" id="0Gv-Uc-XQC"/>
-                        <outlet property="redLabel" destination="Wfg-U2-ZzE" id="GpK-j4-pxF"/>
-                        <outlet property="redSlider" destination="PfE-vS-vP1" id="zAV-mc-iKz"/>
-                        <outlet property="redTextField" destination="xdS-j2-lIw" id="3tn-WL-xgG"/>
+                        <outletCollection property="labels" destination="Wfg-U2-ZzE" collectionClass="NSMutableArray" id="854-Tw-vb9"/>
+                        <outletCollection property="labels" destination="lDz-SR-kcJ" collectionClass="NSMutableArray" id="sqx-eO-W3M"/>
+                        <outletCollection property="labels" destination="HnV-he-jjP" collectionClass="NSMutableArray" id="5IZ-1a-3sy"/>
+                        <outletCollection property="sliders" destination="PfE-vS-vP1" collectionClass="NSMutableArray" id="WVx-yo-7hY"/>
+                        <outletCollection property="sliders" destination="yQa-us-Gk2" collectionClass="NSMutableArray" id="d0B-3w-gsW"/>
+                        <outletCollection property="sliders" destination="bWL-wX-bG0" collectionClass="NSMutableArray" id="IhQ-YT-3dG"/>
+                        <outletCollection property="textFields" destination="xdS-j2-lIw" collectionClass="NSMutableArray" id="pSz-kP-gfe"/>
+                        <outletCollection property="textFields" destination="3Ey-U7-HEP" collectionClass="NSMutableArray" id="Hz7-NR-Pbp"/>
+                        <outletCollection property="textFields" destination="Jr8-jB-SWv" collectionClass="NSMutableArray" id="RG5-af-yZc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

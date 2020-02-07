@@ -13,23 +13,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // MARK: IBOutlets
     @IBOutlet weak var colorView: UIView!
     
-    @IBOutlet weak var redLabel: UILabel!
-    @IBOutlet weak var greenLabel: UILabel!
-    @IBOutlet weak var blueLabel: UILabel!
-    
-    @IBOutlet weak var redSlider: UISlider!
-    @IBOutlet weak var greenSlider: UISlider!
-    @IBOutlet weak var blueSlider: UISlider!
-    
-    @IBOutlet weak var redTextField: UITextField!
-    @IBOutlet weak var greenTextField: UITextField!
-    @IBOutlet weak var blueTextField: UITextField!
+    @IBOutlet var labels: [UILabel]!
+    @IBOutlet var sliders: [UISlider]!
+    @IBOutlet var textFields: [UITextField]!
     
     // MARK: Private properties
     private var previousText: String? // need to remember that, if user makes a mistake in textFields
-    private var rgbColor: (red: Float, green: Float, blue: Float) = (0.5, 0.5, 0.5)
+    private var rgbColor: [Float] = [0.5, 0.5, 0.5, 1]
+    private let colors: [UIColor] = [.red, .green, .blue]
     
-    // MARK: Lifestyle methods
+    // MARK: Initializers
+    func setupSliders() {
+        sliders.forEach {
+            $0.setup(minValue: 0,
+                     maxValue: 1,
+                     initialValue: rgbColor[$0.tag],
+                     tintColor: colors[$0.tag])
+        }
+    }
+    
+    private func setupTextFields() {
+        textFields.forEach { $0.delegate = self }
+        textFields.forEach { $0.addDoneButtonOnKeyboard() }
+    }
+    
+    // MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,41 +47,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         setupTextFields()
         
         updateColorView()
-        updateLabels()
-        updateTextFields()
+        labels.forEach { $0.text = rgbColor[$0.tag].toText() }
+        textFields.forEach { $0.text = rgbColor[$0.tag].toText() }
     }
     
-    // MARK: Initializers
-    func setupSliders() {
-        redSlider.setup(minValue: 0, maxValue: 1, initialValue: rgbColor.red, tintColor: .red)
-        greenSlider.setup(minValue: 0, maxValue: 1, initialValue: rgbColor.green, tintColor: .green)
-        blueSlider.setup(minValue: 0, maxValue: 1, initialValue: rgbColor.blue, tintColor: .blue)
-    }
-    
-    private func setupTextFields() {
-        redTextField.delegate = self
-        greenTextField.delegate = self
-        blueTextField.delegate = self
-        
-        redTextField.addDoneButtonOnKeyboard()
-        greenTextField.addDoneButtonOnKeyboard()
-        blueTextField.addDoneButtonOnKeyboard()
-    }
-    
-    // MARK: Override methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // hide keyboard after touch view
         view.endEditing(true)
     }
     
     //MARK: IBActions
-    @IBAction func SliderMoved() {
-        rgbColor.red = redSlider.value
-        rgbColor.green = greenSlider.value
-        rgbColor.blue = blueSlider.value
+    
+    @IBAction func sliderMoved(_ sender: UISlider) {
+        labels[sender.tag].text = sender.value.toText()
+        textFields[sender.tag].text = sender.value.toText()
         
-        updateLabels()
-        updateTextFields()
         updateColorView()
     }
     
@@ -90,64 +78,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        textField.text = value.toText()
-        rgbColor.red = Float(redTextField.text!)!
-        rgbColor.green = Float(greenTextField.text!)!
-        rgbColor.blue = Float(blueTextField.text!)!
-        
-        updateSliders()
-        updateLabels()
+        let index = textField.tag
+        labels[index].text = value.toText()
+        sliders[index].value = value
+        rgbColor[index] = value
         updateColorView()
     }
     
-    private func updateLabelText(label: UILabel, newText: String) {
-        if label.text != newText {
-            label.text = newText
-        }
-    }
-    
-    private func updateLabels() {
-        updateLabelText(label: redLabel, newText: rgbColor.red.toText())
-        updateLabelText(label: greenLabel, newText: rgbColor.green.toText())
-        updateLabelText(label: blueLabel, newText: rgbColor.blue.toText())
-    }
-    
-    private func updateTextFieldText(textField: UITextField, newText: String) {
-        if textField.text != newText {
-            textField.text = newText
-        }
-    }
-    
-    private func updateTextFields() {
-        updateTextFieldText(textField: redTextField, newText: rgbColor.red.toText())
-        updateTextFieldText(textField: greenTextField, newText: rgbColor.green.toText())
-        updateTextFieldText(textField: blueTextField, newText: rgbColor.blue.toText())
-    }
-    
-    private func updateSliderValue(slider: UISlider, newValue: Float) {
-        if slider.value != newValue {
-            slider.value = newValue
-        }
-    }
-    
-    private func updateSliders() {
-        updateSliderValue(slider: redSlider, newValue: rgbColor.red)
-        updateSliderValue(slider: greenSlider, newValue: rgbColor.green)
-        updateSliderValue(slider: blueSlider, newValue: rgbColor.blue)
-    }
-    
     private func updateColorView() {
-        colorView.backgroundColor = UIColor(displayP3Red: CGFloat(rgbColor.red), green: CGFloat(rgbColor.green), blue: CGFloat(rgbColor.blue), alpha: 1)
+        colorView.backgroundColor = UIColor(
+            red: CGFloat(rgbColor[0]),
+            green: CGFloat(rgbColor[1]),
+            blue: CGFloat(rgbColor[2]),
+            alpha: CGFloat(rgbColor[3])
+        )
     }
 }
 
-// MARK: Extensions
+// MARK: Float
 extension Float {
     func toText() -> String {
         return String(format: "%.2f", self)
     }
 }
 
+// MARK: ViewController
 extension ViewController {
     func showAlertByTextField(title: String, message: String, textField: UITextField) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -159,6 +114,7 @@ extension ViewController {
     }
 }
 
+// MARK: UITextField
 extension UITextField {
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
@@ -179,6 +135,7 @@ extension UITextField {
     }
 }
 
+// MARK: UISlider
 extension UISlider {
     func setup(minValue: Float, maxValue: Float, initialValue: Float, tintColor: UIColor) {
         self.minimumValue = minValue
