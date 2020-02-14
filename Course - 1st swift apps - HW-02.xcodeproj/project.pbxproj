@@ -14,6 +14,7 @@
 		3A03663D23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663B23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld */; };
 		3A03663F23E4891700945654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A03663E23E4891700945654 /* Assets.xcassets */; };
 		3A03664223E4891700945654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A03664023E4891700945654 /* LaunchScreen.storyboard */; };
+		3AF858F723F71A1900A00DB1 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF858F623F71A1900A00DB1 /* RGBColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3A03663E23E4891700945654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A03664123E4891700945654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A03664323E4891700945654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AF858F623F71A1900A00DB1 /* RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				3A03663223E4891700945654 /* AppDelegate.swift */,
 				3A03663423E4891700945654 /* SceneDelegate.swift */,
 				3A03663623E4891700945654 /* ViewController.swift */,
+				3AF858F623F71A1900A00DB1 /* RGBColor.swift */,
 				3A03663823E4891700945654 /* Main.storyboard */,
 				3A03663E23E4891700945654 /* Assets.xcassets */,
 				3A03664023E4891700945654 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A03663723E4891700945654 /* ViewController.swift in Sources */,
+				3AF858F723F71A1900A00DB1 /* RGBColor.swift in Sources */,
 				3A03663323E4891700945654 /* AppDelegate.swift in Sources */,
 				3A03663D23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld in Sources */,
 				3A03663523E4891700945654 /* SceneDelegate.swift in Sources */,

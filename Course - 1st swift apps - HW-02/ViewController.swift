@@ -19,15 +19,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Private properties
     private var previousText: String? // need to remember that, if user makes a mistake in textFields
-    private var rgbColor: [Float] = [0.5, 0.5, 0.5, 1]
     private let colors: [UIColor] = [.red, .green, .blue]
+    private var rgbColor = RGBColor()
     
     // MARK: Initializers
     func setupSliders() {
         sliders.forEach {
             $0.setup(minValue: 0,
                      maxValue: 1,
-                     initialValue: rgbColor[$0.tag],
+                     initialValue: rgbColor.arrRGBColor[$0.tag],
                      tintColor: colors[$0.tag])
         }
     }
@@ -41,19 +41,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colorView.layer.cornerRadius = 10
+        colorView.layer.cornerRadius = 15
         
         setupSliders()
         setupTextFields()
         
         updateColorView()
-        labels.forEach { $0.text = rgbColor[$0.tag].toText() }
-        textFields.forEach { $0.text = rgbColor[$0.tag].toText() }
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // hide keyboard after touch view
-        view.endEditing(true)
+        labels.forEach { $0.text = rgbColor.arrRGBColor[$0.tag].toText() }
+        textFields.forEach { $0.text = rgbColor.arrRGBColor[$0.tag].toText() }
     }
     
     //MARK: IBActions
@@ -61,6 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func sliderMoved(_ sender: UISlider) {
         labels[sender.tag].text = sender.value.toText()
         textFields[sender.tag].text = sender.value.toText()
+        rgbColor.setColor(index: sender.tag, value: sender.value)
         
         updateColorView()
     }
@@ -81,28 +77,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let index = textField.tag
         labels[index].text = value.toText()
         sliders[index].value = value
-        rgbColor[index] = value
+        rgbColor.setColor(index: index, value: value)
         updateColorView()
     }
     
     private func updateColorView() {
         colorView.backgroundColor = UIColor(
-            red: CGFloat(rgbColor[0]),
-            green: CGFloat(rgbColor[1]),
-            blue: CGFloat(rgbColor[2]),
-            alpha: CGFloat(rgbColor[3])
+            red: CGFloat(rgbColor.red),
+            green: CGFloat(rgbColor.green),
+            blue: CGFloat(rgbColor.blue),
+            alpha: CGFloat(rgbColor.alpha)
         )
     }
 }
 
-// MARK: Float
+// MARK: Extenstion Float
 extension Float {
     func toText() -> String {
         return String(format: "%.2f", self)
     }
 }
 
-// MARK: ViewController
+// MARK: Extenstion ViewController
 extension ViewController {
     func showAlertByTextField(title: String, message: String, textField: UITextField) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -111,6 +107,10 @@ extension ViewController {
         }
         alert.addAction(okAction)
         present(alert, animated: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 }
 
