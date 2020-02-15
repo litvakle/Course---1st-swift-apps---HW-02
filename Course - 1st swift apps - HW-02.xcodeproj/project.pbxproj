@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		3A03663323E4891700945654 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663223E4891700945654 /* AppDelegate.swift */; };
 		3A03663523E4891700945654 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663423E4891700945654 /* SceneDelegate.swift */; };
-		3A03663723E4891700945654 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663623E4891700945654 /* ViewController.swift */; };
+		3A03663723E4891700945654 /* SetColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663623E4891700945654 /* SetColorViewController.swift */; };
 		3A03663A23E4891700945654 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A03663823E4891700945654 /* Main.storyboard */; };
-		3A03663D23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A03663B23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld */; };
 		3A03663F23E4891700945654 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A03663E23E4891700945654 /* Assets.xcassets */; };
 		3A03664223E4891700945654 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A03664023E4891700945654 /* LaunchScreen.storyboard */; };
+		3A19EC3A23F71E5E005CA57E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19EC3923F71E5E005CA57E /* MainViewController.swift */; };
+		3A19EC4023F7D36E005CA57E /* Extensions - Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19EC3F23F7D36D005CA57E /* Extensions - Float.swift */; };
+		3A19EC4323F7D3BD005CA57E /* Extensions - UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19EC4223F7D3BD005CA57E /* Extensions - UITextField.swift */; };
+		3A19EC4523F7D3EA005CA57E /* Extensions - UISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19EC4423F7D3EA005CA57E /* Extensions - UISlider.swift */; };
+		3A19EC4723F7D461005CA57E /* Extensions - UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19EC4623F7D461005CA57E /* Extensions - UIViewController.swift */; };
+		3A94BF1023F7E14E0050056B /* Extensions - SetColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A94BF0F23F7E14E0050056B /* Extensions - SetColorViewController.swift */; };
 		3AF858F723F71A1900A00DB1 /* RGBColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF858F623F71A1900A00DB1 /* RGBColor.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +26,17 @@
 		3A03662F23E4891700945654 /* Course - 1st swift apps - HW-02-01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Course - 1st swift apps - HW-02-01.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A03663223E4891700945654 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A03663423E4891700945654 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A03663623E4891700945654 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3A03663623E4891700945654 /* SetColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetColorViewController.swift; sourceTree = "<group>"; };
 		3A03663923E4891700945654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A03663C23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Course___1st_swift_apps___HW_02.xcdatamodel"; sourceTree = "<group>"; };
 		3A03663E23E4891700945654 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A03664123E4891700945654 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A03664323E4891700945654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A19EC3923F71E5E005CA57E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3A19EC3F23F7D36D005CA57E /* Extensions - Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions - Float.swift"; sourceTree = "<group>"; };
+		3A19EC4223F7D3BD005CA57E /* Extensions - UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions - UITextField.swift"; sourceTree = "<group>"; };
+		3A19EC4423F7D3EA005CA57E /* Extensions - UISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions - UISlider.swift"; sourceTree = "<group>"; };
+		3A19EC4623F7D461005CA57E /* Extensions - UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions - UIViewController.swift"; sourceTree = "<group>"; };
+		3A94BF0F23F7E14E0050056B /* Extensions - SetColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions - SetColorViewController.swift"; sourceTree = "<group>"; };
 		3AF858F623F71A1900A00DB1 /* RGBColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,17 +70,62 @@
 		3A03663123E4891700945654 /* Course - 1st swift apps - HW-02 */ = {
 			isa = PBXGroup;
 			children = (
-				3A03663223E4891700945654 /* AppDelegate.swift */,
-				3A03663423E4891700945654 /* SceneDelegate.swift */,
-				3A03663623E4891700945654 /* ViewController.swift */,
-				3AF858F623F71A1900A00DB1 /* RGBColor.swift */,
-				3A03663823E4891700945654 /* Main.storyboard */,
-				3A03663E23E4891700945654 /* Assets.xcassets */,
-				3A03664023E4891700945654 /* LaunchScreen.storyboard */,
-				3A03664323E4891700945654 /* Info.plist */,
-				3A03663B23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld */,
+				3A19EC3C23F7CED1005CA57E /* Models */,
+				3A19EC3D23F7CEDA005CA57E /* Views */,
+				3A19EC3B23F7CEC0005CA57E /* ViewControllers */,
+				3A19EC4123F7D37D005CA57E /* Extensions */,
+				3A19EC3E23F7CEEA005CA57E /* SupportingFiles */,
 			);
 			path = "Course - 1st swift apps - HW-02";
+			sourceTree = "<group>";
+		};
+		3A19EC3B23F7CEC0005CA57E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A19EC3923F71E5E005CA57E /* MainViewController.swift */,
+				3A03663623E4891700945654 /* SetColorViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3A19EC3C23F7CED1005CA57E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3AF858F623F71A1900A00DB1 /* RGBColor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A19EC3D23F7CEDA005CA57E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A03663823E4891700945654 /* Main.storyboard */,
+				3A03664023E4891700945654 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A19EC3E23F7CEEA005CA57E /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3A03664323E4891700945654 /* Info.plist */,
+				3A03663223E4891700945654 /* AppDelegate.swift */,
+				3A03663423E4891700945654 /* SceneDelegate.swift */,
+				3A03663E23E4891700945654 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		3A19EC4123F7D37D005CA57E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A19EC3F23F7D36D005CA57E /* Extensions - Float.swift */,
+				3A19EC4223F7D3BD005CA57E /* Extensions - UITextField.swift */,
+				3A19EC4423F7D3EA005CA57E /* Extensions - UISlider.swift */,
+				3A19EC4623F7D461005CA57E /* Extensions - UIViewController.swift */,
+				3A94BF0F23F7E14E0050056B /* Extensions - SetColorViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,10 +199,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A03663723E4891700945654 /* ViewController.swift in Sources */,
+				3A03663723E4891700945654 /* SetColorViewController.swift in Sources */,
+				3A94BF1023F7E14E0050056B /* Extensions - SetColorViewController.swift in Sources */,
+				3A19EC4323F7D3BD005CA57E /* Extensions - UITextField.swift in Sources */,
 				3AF858F723F71A1900A00DB1 /* RGBColor.swift in Sources */,
 				3A03663323E4891700945654 /* AppDelegate.swift in Sources */,
-				3A03663D23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld in Sources */,
+				3A19EC4523F7D3EA005CA57E /* Extensions - UISlider.swift in Sources */,
+				3A19EC3A23F71E5E005CA57E /* MainViewController.swift in Sources */,
+				3A19EC4023F7D36E005CA57E /* Extensions - Float.swift in Sources */,
+				3A19EC4723F7D461005CA57E /* Extensions - UIViewController.swift in Sources */,
 				3A03663523E4891700945654 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +354,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 836WWF38RW;
-				INFOPLIST_FILE = "Course - 1st swift apps - HW-02/Info.plist";
+				INFOPLIST_FILE = "Course - 1st swift apps - HW-02/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +372,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 836WWF38RW;
-				INFOPLIST_FILE = "Course - 1st swift apps - HW-02/Info.plist";
+				INFOPLIST_FILE = "Course - 1st swift apps - HW-02/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,19 +406,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3A03663B23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3A03663C23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodel */,
-			);
-			currentVersion = 3A03663C23E4891700945654 /* Course___1st_swift_apps___HW_02.xcdatamodel */;
-			path = "Course___1st_swift_apps___HW_02.xcdatamodeld";
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3A03662723E4891700945654 /* Project object */;
 }

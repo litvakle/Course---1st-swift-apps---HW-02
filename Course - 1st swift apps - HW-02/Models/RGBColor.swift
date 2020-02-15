@@ -7,16 +7,16 @@
 //
 
 struct RGBColor {
-    var red: Float = 0.5
-    var green: Float = 0.5
-    var blue: Float = 0.5
-    var alpha: Float = 1
+    var red: Float
+    var green: Float
+    var blue: Float
+    var alpha: Float
     
-    var arrRGBColor: [Float] {
+    var components: [Float] {
         [red, green, blue, alpha]
     }
     
-    mutating func setColor(index: Int, value: Float) {
+    mutating func setComponent(index: Int, value: Float) {
         switch index {
             case 0: red = value
             case 1: green = value
@@ -24,5 +24,12 @@ struct RGBColor {
             case 3: alpha = value
             default: break
         }
+    }
+    
+    init(red: Float, green: Float, blue: Float, alpha: Float) {
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
     }
 }
