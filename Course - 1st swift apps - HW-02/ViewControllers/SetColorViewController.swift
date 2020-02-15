@@ -59,7 +59,7 @@ class SetColorViewController: UIViewController {
         setupSliders()
         setupTextFields()
         
-        updateBackgoundColorInView(view: colorView, rgbColor: rgbColor)
+        updateBackgoundColorIn(view: colorView, with: rgbColor)
     }
     
     //MARK: IBActions
@@ -68,7 +68,7 @@ class SetColorViewController: UIViewController {
         textFields[sender.tag].text = sender.value.toText()
         rgbColor.setComponent(index: sender.tag, value: sender.value)
         
-        updateBackgoundColorInView(view: colorView, rgbColor: rgbColor)
+        updateBackgoundColorIn(view: colorView, with: rgbColor)
     }
     
     @IBAction func doneButtonPressed() {

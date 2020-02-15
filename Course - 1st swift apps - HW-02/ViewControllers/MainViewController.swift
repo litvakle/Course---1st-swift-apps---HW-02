@@ -11,19 +11,19 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: Private properties
-    var rgbColor = RGBColor(red: 1, green: 1, blue: 1, alpha: 1) // white color
+    private var rgbColor = RGBColor(red: 1, green: 1, blue: 1, alpha: 1) // white color
     
     // MARK: Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateBackgoundColorInView(view: view, rgbColor: rgbColor)
+        updateBackgoundColorIn(view: view, with: rgbColor)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scvc = segue.destination as? SetColorViewController {
-            scvc.rgbColor = rgbColor
-            scvc.delegate = self
+        if let scVC = segue.destination as? SetColorViewController {
+            scVC.rgbColor = rgbColor
+            scVC.delegate = self
         }
     }
 }
@@ -31,6 +31,6 @@ class MainViewController: UIViewController {
 extension MainViewController: SetColorViewControllerDelegate {
     func changeViewBackgroundColor(rgbColor: RGBColor) {
         self.rgbColor = rgbColor
-        updateBackgoundColorInView(view: view, rgbColor: rgbColor)
+        updateBackgoundColorIn(view: view, with: rgbColor)
     }
 }

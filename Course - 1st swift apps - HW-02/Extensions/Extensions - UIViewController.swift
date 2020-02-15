@@ -10,12 +10,20 @@ import UIKit
 
 // MARK: Extenstion ViewController
 extension UIViewController{
-    func showAlertByTextField(title: String, message: String, textField: UITextField, previousText: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    func showAlertByTextField(title: String,
+                              message: String,
+                              textField: UITextField,
+                              previousText: String) {
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
         let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             textField.text = previousText
         }
+        
         alert.addAction(okAction)
+        
         present(alert, animated: true)
     }
     
@@ -23,7 +31,7 @@ extension UIViewController{
         view.endEditing(true)
     }
     
-    func updateBackgoundColorInView(view: UIView, rgbColor: RGBColor) {
+    func updateBackgoundColorIn(view: UIView, with rgbColor: RGBColor) {
         view.backgroundColor = UIColor(
             red: CGFloat(rgbColor.red),
             green: CGFloat(rgbColor.green),
