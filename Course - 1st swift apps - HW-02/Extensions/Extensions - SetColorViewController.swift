@@ -26,6 +26,7 @@ extension SetColorViewController: UITextFieldDelegate {
         
         let index = textField.tag
         labels[index].text = value.toText()
+        textField.text = value.toText()
         sliders[index].value = value
         rgbColor.setComponent(index: index, value: value)
         updateBackgoundColorInView(view: colorView, rgbColor: rgbColor)

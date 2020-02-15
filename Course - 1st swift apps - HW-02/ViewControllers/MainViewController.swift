@@ -17,17 +17,20 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        updateColor()
-    }
-    
-    func updateColor() {
         updateBackgoundColorInView(view: view, rgbColor: rgbColor)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let scvc = segue.destination as? SetColorViewController {
             scvc.rgbColor = rgbColor
             scvc.delegate = self
         }
+    }
+}
+
+extension MainViewController: SetColorViewControllerDelegate {
+    func changeViewBackgroundColor(rgbColor: RGBColor) {
+        self.rgbColor = rgbColor
+        updateBackgoundColorInView(view: view, rgbColor: rgbColor)
     }
 }

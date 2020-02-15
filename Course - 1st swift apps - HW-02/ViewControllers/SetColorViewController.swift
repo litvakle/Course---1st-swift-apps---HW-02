@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SetColorViewControllerDelegate {
+    func changeViewBackgroundColor(rgbColor: RGBColor)
+}
+
 class SetColorViewController: UIViewController {
     
     // MARK: IBOutlets
@@ -68,8 +72,7 @@ class SetColorViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
-        delegate.rgbColor = rgbColor
-        delegate.updateColor()
+        delegate.changeViewBackgroundColor(rgbColor: rgbColor)
         dismiss(animated: true)
     }
 }
