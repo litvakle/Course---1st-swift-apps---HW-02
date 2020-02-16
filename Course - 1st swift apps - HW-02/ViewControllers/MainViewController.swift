@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: SetColorViewControllerDelegate {
-    func changeViewBackgroundColor(rgbColor: RGBColor) {
-        self.rgbColor = rgbColor
+    func changeViewBackgroundColor(color: RGBColor) {
+        rgbColor = color
         updateBackgoundColorIn(view: view, with: rgbColor)
     }
 }

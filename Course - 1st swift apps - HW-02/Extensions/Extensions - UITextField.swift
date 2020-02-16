@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: UITextField
 extension UITextField {
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(

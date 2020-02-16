@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SetColorViewControllerDelegate {
-    func changeViewBackgroundColor(rgbColor: RGBColor)
+    func changeViewBackgroundColor(color: RGBColor)
 }
 
 class SetColorViewController: UIViewController {
@@ -24,29 +24,34 @@ class SetColorViewController: UIViewController {
     
     // MARK: Private properties
     private let colors: [UIColor] = [.red, .green, .blue]
+    
+    // MARK: Public properties
     var previousText: String? // need to remember that, if user makes a mistake in textFields
     var rgbColor: RGBColor!
     var delegate: MainViewController!
     
     // MARK: Initializers
     func setupSliders() {
-        sliders.forEach {
-            $0.setup(minValue: 0,
-                     maxValue: 1,
-                     initialValue: rgbColor.components[$0.tag],
-                     tintColor: colors[$0.tag])
+        for slider in sliders {
+            slider.setup(minValue: 0,
+                         maxValue: 1,
+                         initialValue: rgbColor.components[slider.tag],
+                         tintColor: colors[slider.tag])
         }
     }
     
     private func setupLabels() {
-        labels.forEach { $0.text = rgbColor.components[$0.tag].toText() }
+        for label in labels {
+            label.text = rgbColor.components[label.tag].toText()
+        }
     }
     
     private func setupTextFields() {
-        textFields.forEach { $0.delegate = self }
-        textFields.forEach { $0.addDoneButtonOnKeyboard() }
-        
-        textFields.forEach { $0.text = rgbColor.components[$0.tag].toText() }
+        for textField in textFields {
+            textField.delegate = self
+            textField.addDoneButtonOnKeyboard()
+            textField.text = rgbColor.components[textField.tag].toText()
+        }
     }
     
     // MARK: Override methods
@@ -72,7 +77,7 @@ class SetColorViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed() {
-        delegate.changeViewBackgroundColor(rgbColor: rgbColor)
+        delegate.changeViewBackgroundColor(color: rgbColor)
         dismiss(animated: true)
     }
 }

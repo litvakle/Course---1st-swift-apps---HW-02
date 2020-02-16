@@ -18,17 +18,20 @@ extension SetColorViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text, let value = Float(text), value <= 1 else {
             showAlertByTextField(title: "Error",
-                                 message: "Value should be in interval [0;1]",
+                                 message: "The value must be less than or equal 1",
                                  textField: textField,
                                  previousText: previousText ?? "")
             return
         }
         
         let index = textField.tag
+        
         labels[index].text = value.toText()
         textField.text = value.toText()
         sliders[index].value = value
+        
         rgbColor.setComponent(index: index, value: value)
+        
         updateBackgoundColorIn(view: colorView, with: rgbColor)
     }
 }

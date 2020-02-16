@@ -8,7 +8,6 @@
 
 import UIKit
 
-// MARK: Extenstion ViewController
 extension UIViewController{
     func showAlertByTextField(title: String,
                               message: String,
@@ -17,7 +16,6 @@ extension UIViewController{
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        
         let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
             textField.text = previousText
         }
