@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     }
 }
 
+// MARK: Extension MainViewController
 extension MainViewController: SetColorViewControllerDelegate {
     func changeViewBackgroundColor(color: RGBColor) {
         rgbColor = color
