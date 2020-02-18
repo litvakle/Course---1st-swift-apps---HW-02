@@ -28,7 +28,7 @@ class SetColorViewController: UIViewController {
     // MARK: Public properties
     var previousText: String? // need to remember that, if user makes a mistake in textFields
     var rgbColor: RGBColor!
-    var delegate: MainViewController!
+    var delegate: SetColorViewControllerDelegate!
     
     // MARK: Initializers
     func setupSliders() {
